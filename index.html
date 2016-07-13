@@ -3,50 +3,67 @@
 	<title>greensocks</title>
 	<style type="text/css">
 		.box {
-			height: 100px;
-			width: 100px;
-			background: red;
+			height: 40px;
+			width: 40px;
+			background: black;
 			float: left;
 		}
-
 	</style>
-	<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
 	<script type="text/javascript">
-		var last_position = {},
-    		$output       = $('#output');
-				$(document).on('mousemove', function (event) {
-				    if (typeof(last_position.x) != 'undefined') {
-				        var deltaX = last_position.x - event.offsetX,
-				            deltaY = last_position.y - event.offsetY;
-				        if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX > 0) {
-				            //left
-				            $output.append('<li>Left</li>');
-				        } else if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX < 0) {
-				            //right
-				            $output.append('<li>Right</li>');
-				        } else if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY > 0) {
-				            //up
-				            $output.append('<li>Up</li>');
-				        } else if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY < 0) {
-				            //down
-				            $output.append('<li>Down</li>');
-				        }
-				        if ($output.children().length > 4) {
-				            $output.children().eq(0).remove();
-				        }
-				    }
-				    last_position = {
-				        x : event.offsetX,
-				        y : event.offsetY
-				    };
-				});
+		var last_position = {};
+
+		function left(){
+		  TweenMax.to(this, 0.5, {backgroundColor:"blue"})
+		};
+
+		function right(){
+		  TweenMax.to(this, 0.5, {backgroundColor:"yellow"})
+		};
+
+		function up(){
+		  TweenMax.to(this, 0.5, {backgroundColor:"green"})
+		};
+
+		function down(){
+		  TweenMax.to(this, 0.5, {backgroundColor:"red"})
+		};
+			
+		$(document).on('mousemove', function (event) {
+
+		    if (typeof(last_position.x) != 'undefined') {
+		        var deltaX = last_position.x - event.offsetX,
+		            deltaY = last_position.y - event.offsetY;
+		        if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX > 0) {
+		            //left
+		            $(".box").hover(left);
+		            console.log("left");
+		        } else if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX < 0) {
+		            //right
+		            $(".box").hover(right);
+		            console.log("right");
+		        } else if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY > 0) {
+		            //up
+		            $(".box").hover(up);
+		            console.log("up");
+		        } else if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY < 0) {
+		            //down
+		            $(".box").hover(down);
+		            console.log("down");
+		        }
+		    };
+		    last_position = {
+		        x : event.offsetX,
+		        y : event.offsetY
+		    };
+		    
+		});
+
 	</script>
 </head>
 <body>
-	<ul id="output"></ul>
 	<section>
-
 		<div class="box"></div>
 		<div class="box"></div>
 		<div class="box"></div>
@@ -103,7 +120,230 @@
 		<div class="box"></div>
 		<div class="box"></div>
 		<div class="box"></div>
-
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
 	</section>
 
 </body>
